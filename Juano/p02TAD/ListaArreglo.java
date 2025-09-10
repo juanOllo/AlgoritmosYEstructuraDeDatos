@@ -1,11 +1,14 @@
-import java.util.ArrayList;
-
 public class ListaArreglo<T> implements Lista<T>{
-    private ArrayList<T> list;
-    //private int start;
-    //private int end;
+    private T[] elementos;
+    private int cant;
 
-    public ListaArreglo(){
+    public ListaArreglo(int capacidad){
+        if (capacidad <= 0) {
+            throw new IllegalArgumentException("Capacidad invalida");
+        }
+
+        elementos = (T[]) new Object[capacidad];
+        cant = 0;
     }
 
     @Override
